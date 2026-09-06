@@ -1,0 +1,7 @@
+crewai>=0.86.0
+crewai-tools>=0.17.0
+langchain-core>=0.3.0
+langchain-google-genai>=2.0.0
+langgraph>=0.2.0
+google-genai>=1.0.0
+python-dotenv>=1.0.1
