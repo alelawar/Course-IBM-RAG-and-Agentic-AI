@@ -14,7 +14,7 @@ import sys
 from dotenv import load_dotenv
 # Mengimpor komponen utama CrewAI untuk membuat agent, task, dan workflow.
 from crewai import Agent, Task, Crew, Process, LLM
-
+from crewai_tools import SerperDevTool
 # Memuat konfigurasi, termasuk GEMINI_API_KEY, dari file .env.
 load_dotenv()
 
@@ -29,6 +29,7 @@ gemini_llm = LLM(
     # Mengatur tingkat kreativitas model; angka lebih tinggi biasanya lebih variatif.
     temperature=0.7,
 )
+serper_api = os.getenv("SERPER_API_KEY")
 
 # Membuat agent researcher yang bertugas mengumpulkan informasi.
 researcher = Agent(
@@ -46,7 +47,9 @@ researcher = Agent(
     # Menampilkan proses kerja agent di terminal.
     verbose=True,
     # Agent tidak boleh membagi tugasnya kepada agent lain.
-    allow_delegation=False
+    allow_delegation=False,
+    # Tools Tambahan untuk search engine
+    tools=[SerperDevTool()]
 )
 
 # Membuat agent writer yang bertugas menulis artikel berdasarkan hasil riset.
