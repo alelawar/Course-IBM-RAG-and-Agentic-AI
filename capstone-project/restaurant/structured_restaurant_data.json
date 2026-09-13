@@ -1,0 +1,85 @@
+[
+    {
+        "name": "The Gilded Artichoke",
+        "location": "Silver Lake",
+        "type": "upscale bistro",
+        "food_style": "Farm-to-Table Californian",
+        "rating": 4.5,
+        "price_range": 4,
+        "signatures": [
+            "lavender-rubbed roasted chicken",
+            "delicate heirloom tomato tarts"
+        ],
+        "vibe": "bohemian chic",
+        "environment": "high-end greenhouse with reclaimed wood and floor-to-ceiling windows",
+        "shortcomings": [],
+        "sourceIndex": 0,
+        "itemId": 1000001
+    },
+    {
+        "name": "Mar de Cortez",
+        "location": "Santa Monica",
+        "type": "casual taqueria",
+        "food_style": "Baja-style seafood",
+        "rating": 4.2,
+        "price_range": 1,
+        "signatures": [
+            "beer-battered snapper tacos",
+            "zesty octopus ceviche"
+        ],
+        "vibe": "sun-drenched",
+        "environment": "open-air dining near the pier",
+        "shortcomings": [],
+        "sourceIndex": 1,
+        "itemId": 1000002
+    },
+    {
+        "name": "Iron & Embers",
+        "location": "Arts District in DTLA",
+        "type": "fine dining",
+        "food_style": "industrial American steakhouse",
+        "rating": 4.8,
+        "price_range": 4,
+        "signatures": [
+            "45-day dry-aged ribeye served with bone marrow chimichurri"
+        ],
+        "vibe": "moody",
+        "environment": "smells deeply of white oak smoke and masculine sophistication",
+        "shortcomings": [],
+        "sourceIndex": 2,
+        "itemId": 1000003
+    },
+    {
+        "name": "Sakura Garden",
+        "location": "Little Tokyo",
+        "type": "intimate Japanese Kaiseki-lite",
+        "food_style": "Japanese Kaiseki-lite",
+        "rating": 4.9,
+        "price_range": 3,
+        "signatures": [
+            "buttery bluefin tuna belly"
+        ],
+        "vibe": "zen and minimalist",
+        "environment": "quiet escape",
+        "shortcomings": [],
+        "sourceIndex": 3,
+        "itemId": 1000004
+    },
+    {
+        "name": "Pasta & Prose",
+        "location": "West Hollywood",
+        "type": "modern Italian trattoria",
+        "food_style": "modern Italian",
+        "rating": 4.3,
+        "price_range": 3,
+        "signatures": [
+            "chilled prosecco",
+            "theatrical table-side Cacio e Pepe tossed in a massive parmesan wheel"
+        ],
+        "vibe": "glamour",
+        "environment": "see-and-be-seen hub",
+        "shortcomings": [],
+        "sourceIndex": 4,
+        "itemId": 1000005
+    }
+]
