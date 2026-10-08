@@ -1,5 +1,6 @@
 import os
 import time
+from pathlib import Path
 import json
 from dotenv import load_dotenv
 import google.genai as genai
@@ -18,8 +19,11 @@ client = genai.Client(api_key=api_key)
 
 MODEL_NAME = "gemini-3.6-flash"
 
-OUTPUT_FILE = "structured_restaurant_data.json"
-INPUT_FILE = "California-Culinary-Map.txt"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = PROJECT_ROOT / "data"
+
+OUTPUT_FILE = str(DATA_DIR / "processed" / "structured_restaurant_data.json")
+INPUT_FILE = str(DATA_DIR / "raw" / "California-Culinary-Map.txt")
 BATCH_SIZE = 5         
 SLEEP_BETWEEN_CALLS = 5  
 

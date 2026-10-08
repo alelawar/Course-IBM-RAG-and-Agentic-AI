@@ -1,0 +1,28 @@
+# Core LLM & API
+google-genai>=1.0.0
+langchain-google-genai>=2.0.0
+langchain-core>=1.2.0
+
+# MCP (Model Context Protocol)
+fastmcp>=3.1.0
+mcp>=1.25.0
+
+# UI
+gradio>=6.9.0
+
+# Data validation
+pydantic>=2.0.0
+
+# Vector DB & Embeddings
+langchain-chroma>=0.1.0
+sentence-transformers>=2.0.0
+
+# ML & Vision
+torch>=2.0.0
+transformers>=4.30.0
+Pillow>=10.0.0
+
+# Utilities
+numpy>=1.24.0
+python-dotenv>=1.0.0
+

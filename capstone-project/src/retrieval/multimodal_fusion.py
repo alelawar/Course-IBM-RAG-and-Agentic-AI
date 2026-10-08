@@ -271,7 +271,7 @@ rows_article = fuse_rank(
 if len(rows_article) == 0:
     print("⚠️ No results found")
 else:
-    print_fused(rows, title="Demo 3A — Text-heavy fusion (w_text=0.8, w_img=0.2)")
+    print_fused(rows_article, title="Demo 3A — Text-heavy fusion (w_text=0.8, w_img=0.2)")
 
 #demo 3B
 rows_images = fuse_rank(
@@ -288,7 +288,7 @@ rows_images = fuse_rank(
 if len(rows_images) == 0:
     print("⚠️ No results found")
 else:
-    print_fused(rows, title="Demo 3B — Image-heavy fusion (w_text=0.3, w_img=0.7)")
+    print_fused(rows_images, title="Demo 3B — Image-heavy fusion (w_text=0.3, w_img=0.7)")
 
 combined_results = rows_article +  rows_images
 combined_results.sort(

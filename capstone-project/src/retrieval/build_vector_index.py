@@ -19,15 +19,22 @@ from sentence_transformers import SentenceTransformer
 from transformers import CLIPModel, CLIPProcessor
 
 # print("✅ Environment ready")
-IMG_DIR  = "recipe_images"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = PROJECT_ROOT / "data"
+IMG_DIR = DATA_DIR / "recipe_images"  # tidak ikut repo, download dulu (lihat README)
 
 image_paths = sorted(glob.glob(f"{IMG_DIR}/**/*.png", recursive=True))
+if not image_paths:
+    raise RuntimeError(
+        f"Tidak ada gambar resep di '{IMG_DIR}'. Download dan extract dulu "
+        "synthetic-recipe-images.zip ke folder tersebut (link ada di README)."
+    )
 print(f"✅ Images found: {len(image_paths)}")
 
-with open("structured_restaurant_data.json", "r") as f:
+with open(DATA_DIR / "processed" / "structured_restaurant_data.json", "r") as f:
     restaurants = json.load(f)
 
-with open("augmented_food_recipe.json", "r") as f:
+with open(DATA_DIR / "processed" / "augmented_food_recipe.json", "r") as f:
     recipes = json.load(f)
 
 print(f"✅ Loaded restaurants: {len(restaurants)}")

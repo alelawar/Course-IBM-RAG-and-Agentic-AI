@@ -1,23 +1,10 @@
 """
-restaurant_data_management.py
-------------------------------
+manage_restaurants.py
+---------------------
 Adaptasi dari lab-instructions.md (Module 1, Lesson 3) — versi ini
 menggunakan Gemini API (google-genai) alih-alih ibm-watsonx-ai, mengikuti
 pola yang sudah terbukti jalan di script referensi (California-Culinary-Map
 batch processor).
-
-CATATAN PENTING SOAL KUOTA:
-Kamu bilang jatah maksimal 15 request ke Gemini. Supaya aman:
-  - Tidak ada pemanggilan LLM yang dilakukan beruntun tanpa jeda
-    (lihat SLEEP_BETWEEN_CALLS).
-  - Ada REQUEST_COUNTER global + MAX_LLM_REQUESTS sebagai pengaman keras:
-    kalau kepakai lebih dari batas, program akan berhenti dengan pesan
-    jelas, bukan diam-diam boros kuota.
-  - Unit test (Exercise 3) di-MOCK total: tidak memanggil API asli sama
-    sekali, supaya kamu bisa run test berkali-kali tanpa takut kuota habis.
-    Untuk screenshot `new_data_entry_process()`, jalankan manual lewat
-    `manage_restaurants(FILEPATH, BACKUP_PATH)` (baris paling bawah, saat
-    ini di-comment) dengan SATU input paragraf baru.
 """
 
 import os
@@ -26,6 +13,7 @@ import json
 import shutil
 import time
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from dotenv import load_dotenv
@@ -51,8 +39,11 @@ client = genai.Client(api_key=api_key)
 
 MODEL_NAME = "gemini-3.6-flash"
 
-FILEPATH = "structured_restaurant_data.json"
-BACKUP_PATH = "structured_restaurant_data.json.bak"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = PROJECT_ROOT / "data"
+
+FILEPATH = str(DATA_DIR / "processed" / "structured_restaurant_data.json")
+BACKUP_PATH = str(DATA_DIR / "backups" / "structured_restaurant_data.json.bak")
 
 EXAMPLE_RESTAURANT_PARAGRAPH = (
     "Down in **Santa Monica**, **Mar de Cortez** serves as a **sun-drenched**, "
